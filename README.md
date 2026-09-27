@@ -223,7 +223,7 @@ POST /users
 ```json
 {
   "nome": "Bruno",
-  "email": "bruno@email.com",
+  "email": "bruno@nest.com",
   "senha": "123456"
 }
 ```

@@ -843,12 +843,11 @@ As imagens podem ser adicionadas posteriormente nesta seção.
 
 ## Swagger
 
-![Swagger]<img width="1906" height="1028" alt="image" src="https://github.com/user-attachments/assets/abebacc3-3fc7-465f-bfed-8973264db70f" />
+(<img width="1906" height="1028" alt="image" src="https://github.com/user-attachments/assets/abebacc3-3fc7-465f-bfed-8973264db70f" />)
 
 ## API funcionando
 
-![API funcionando](<img width="1630" height="849" alt="image" src="https://github.com/user-attachments/assets/0e8ab33f-8ab5-4abd-baf0-3591c7c94d9a" />
-)
+(<img width="1630" height="849" alt="image" src="https://github.com/user-attachments/assets/0e8ab33f-8ab5-4abd-baf0-3591c7c94d9a" />)
 
 ---
 

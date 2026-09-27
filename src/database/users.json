@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nome": "Bruno",
+      "email": "bruno@nest.com",
+      "senha": "123456"
+    },
+    {
+      "id": 2,
+      "nome": "João",
+      "email": "joao@nest.com", 
+      "senha": "123456"
+    }
+  ]
+}

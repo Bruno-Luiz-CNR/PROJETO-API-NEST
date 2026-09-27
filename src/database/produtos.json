@@ -1,0 +1,28 @@
+{
+  "produtos": [
+    {
+      "id": 4,
+      "nome": "Maquina de Lavar",
+      "preco": 2500,
+      "descricao": "Eletrolux",
+      "categoria": "Maquina",
+      "quantidade": 10
+    },
+    {
+      "id": 2,
+      "nome": "Furadeira",
+      "preco": 2500,
+      "descricao": "Eletrolux",
+      "categoria": "Maquina",
+      "quantidade": 10
+    },
+    {
+      "id": 3,
+      "nome": "Serra",
+      "preco": 2500,
+      "descricao": "Eletrolux",
+      "categoria": "Maquina",
+      "quantidade": 10
+    }
+  ]
+}

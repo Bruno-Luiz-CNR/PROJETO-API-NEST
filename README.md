@@ -855,14 +855,10 @@ As imagens podem ser adicionadas posteriormente nesta seção.
 
 Algumas evoluções planejadas para o projeto:
 
-* [ ] Criar DTO específico para atualização de usuário
-* [ ] Melhorar tipagem dos Services e Repositories
-* [ ] Implementar testes unitários
 * [ ] Implementar testes E2E
 * [ ] Adicionar banco de dados relacional
 * [ ] Implementar integração com MySQL/PostgreSQL
 * [ ] Utilizar ORM
-* [ ] Implementar autenticação
 * [ ] Implementar autorização
 * [ ] Criar relacionamento real entre usuários, produtos e ordens
 * [ ] Melhorar tratamento global de exceções

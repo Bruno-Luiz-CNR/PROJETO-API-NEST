@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
+import { UpdateUserDto } from './dto/user.dto.js';
 
 @Injectable()
 export class UserRepository {
@@ -44,9 +45,10 @@ export class UserRepository {
     };
     await writeFile(caminho, JSON.stringify
       (banco, null, 2), 'utf-8');
+    return banco.users[index];
   }
 
-  async criarUsuario(criarUsuario: any) {
+  async criarUsuario(criarUsuario: UpdateUserDto) {
     const caminho = join(
       process.cwd(),
       'src',

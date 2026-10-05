@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 
 import {
@@ -23,6 +24,7 @@ import {
   AtualizarProdutoDto,
   DeleteProdutoDto,
 } from './dto/produto.dto.js';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 
 @ApiTags('Produtos')
 @Controller('produtos')
@@ -33,6 +35,7 @@ export class ProdController {
 
   // GET /produtos
   @Get()
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Buscar todos os produtos',
     description: 'Retorna todos os produtos cadastrados.',
@@ -67,6 +70,7 @@ export class ProdController {
 
   // GET /produtos/:id
   @Get(':id')
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Buscar produto por ID',
     description: 'Retorna um produto específico pelo seu ID.',
@@ -109,6 +113,7 @@ export class ProdController {
 
   // POST /produtos
   @Post()
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Cadastrar produto',
     description: 'Cria um novo produto.',
@@ -154,6 +159,7 @@ export class ProdController {
 
   // PUT /produtos/:id
   @Put(':id')
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Atualizar produto',
     description: 'Atualiza os dados de um produto existente.',
@@ -207,6 +213,7 @@ export class ProdController {
 
   // DELETE /produtos/:id
   @Delete(':id')
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Excluir produto',
     description:

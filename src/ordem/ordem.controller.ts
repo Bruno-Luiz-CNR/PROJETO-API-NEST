@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 
 import {
@@ -22,6 +23,7 @@ import {
   CriarOrdemDto,
   DeleteOrdemDto,
 } from './dto/ordem.dto.js';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 
 @ApiTags('Ordens')
 @Controller('ordem')
@@ -32,6 +34,7 @@ export class OrdemController {
 
   // GET /ordem
   @Get()
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Buscar todas as ordens',
     description: 'Retorna todas as ordens cadastradas.',
@@ -62,6 +65,7 @@ export class OrdemController {
 
   // GET /ordem/:id
   @Get(':id')
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Buscar ordem por ID',
     description: 'Retorna uma ordem específica pelo seu ID.',
@@ -102,6 +106,7 @@ export class OrdemController {
 
   // POST /ordem
   @Post()
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Criar ordem',
     description: 'Cria uma nova ordem.',
@@ -146,6 +151,7 @@ export class OrdemController {
 
   // PUT /ordem/:id
   @Put(':id')
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Atualizar ordem',
     description: 'Atualiza uma ordem existente.',
@@ -197,6 +203,7 @@ export class OrdemController {
 
   // DELETE /ordem/:id
   @Delete(':id')
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Excluir ordem',
     description: 'Exclui uma ordem existente.',

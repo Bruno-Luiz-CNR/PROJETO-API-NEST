@@ -5,6 +5,7 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 
 import {
@@ -16,7 +17,8 @@ import {
 } from '@nestjs/swagger';
 
 import { UserService } from './user.service.js';
-import { CreateUserDto } from './dto/user.dto.js';
+import { CreateUserDto, UpdateUserDto } from './dto/user.dto.js';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 
 @ApiTags('Usuários')
 @Controller('users')
@@ -26,7 +28,8 @@ export class UsersController {
   ) {}
 
   // GET /users
-  @Get()
+  @Get('/users')
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Buscar todos os usuários',
     description: 'Retorna todos os usuários cadastrados.',
@@ -55,6 +58,7 @@ export class UsersController {
 
   // GET /users/:id
   @Get(':id')
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Buscar usuário por ID',
     description: 'Retorna um usuário específico pelo seu ID.',
@@ -94,6 +98,7 @@ export class UsersController {
 
   // POST /users
   @Post()
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Criar usuário',
     description: 'Cadastra um novo usuário.',
@@ -137,6 +142,7 @@ export class UsersController {
 
   // PUT /users/:id
   @Put(':id')
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({
     summary: 'Atualizar usuário',
     description: 'Atualiza os dados de um usuário existente.',
@@ -182,7 +188,7 @@ export class UsersController {
   })
   async atualizarUsuario(
     @Param('id') id: string,
-    @Body() usuarioAtualizado: any,
+    @Body() usuarioAtualizado: UpdateUserDto,
   ) {
     return await this.userService.atualizarUsuario(
       id,
